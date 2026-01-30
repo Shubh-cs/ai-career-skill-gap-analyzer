@@ -44,3 +44,12 @@ if(st.button("Analyze Skill Gap")):
         st.error(s)
 
 
+    ##roadmap 
+    st.subheader("📌 Next Steps")
+
+    if skill_missing:
+        st.write("In the next 30 days, focus on learning:")
+        for skill in skill_missing[:3]:
+            st.write("➡️", skill)
+    else:
+        st.write("You're already matching the core skills 🎉")
