@@ -11,6 +11,41 @@ Role_Skill={"Software Developer(Backend)":["python","django","node","sql","git",
             "Blockchain Developer":["solidity","ethereum","smart contracts","web3","hardhat","erc-20","ipfs"],
             "LLM Engineer":["python","transformers","huggingface","prompt engineering","rag","langchain","vector database"] }
 
+#roadmap generator
+def generate_roadmap(missing):
+    roadmap = {}
+
+    if not missing:
+        roadmap["90-Day Roadmap"] = ["You already match the core skills 🎉"]
+        return roadmap
+
+    # Split skills into 3 phases
+    n = len(missing)
+    phase1 = missing[: max(1, n // 3)]
+    phase2 = missing[max(1, n // 3): max(2, 2 * n // 3)]
+    phase3 = missing[max(2, 2 * n // 3):]
+
+    roadmap["Days 1–30 (Foundation)"] = [
+        f"Learn and practice: {', '.join(phase1)}",
+        "Complete 1 small tutorial project",
+        "Revise basics + make notes"
+    ]
+
+    roadmap["Days 31–60 (Application)"] = [
+        f"Build projects using: {', '.join(phase2) if phase2 else 'previous skills'}",
+        "Start intermediate-level problems",
+        "Improve resume with new skills"
+    ]
+
+    roadmap["Days 61–90 (Job-Ready)"] = [
+        f"Master advanced topics: {', '.join(phase3) if phase3 else 'remaining skills'}",
+        "Build 1 strong portfolio project",
+        "Start mock interviews + apply"
+    ]
+
+    return roadmap
+
+
 #Title page
 st.title("AI Career Skill-Gap Analyzer")
 st.write("Let's see what you need to reach your goal")
@@ -44,12 +79,16 @@ if(st.button("Analyze Skill Gap")):
         st.error(s)
 
 
-    ##roadmap 
-    st.subheader("📌 Next Steps")
+    #roadmap output
+    st.divider()
+    st.subheader("📌 Personalized 90-Day Roadmap")
 
-    if skill_missing:
-        st.write("In the next 30 days, focus on learning:")
-        for skill in skill_missing[:3]:
-            st.write("➡️", skill)
-    else:
-        st.write("You're already matching the core skills 🎉")
+    roadmap = generate_roadmap(skill_missing)
+
+    for phase, steps in roadmap.items():
+        st.markdown(f"### {phase}")
+        for step in steps:
+            st.write("➡️", step)
+
+
+
