@@ -6,15 +6,30 @@ Built with **Python + Streamlit**.
 
 ---
 
+## 🚀 Live Demo
+
+Try the app here:
+
+👉 https://ai-career-skill-gap-analyzer.streamlit.app/
+
+---
+
 ## 📌 Problem
 
-Students often know *what career role they want* (Backend Dev, Data Analyst, LLM Engineer, etc.)
+Most students (especially early-career learners) know the role they want:
 
-But they struggle with:
+- Backend Developer  
+- Data Analyst  
+- LLM Engineer  
+- Cybersecurity Engineer  
 
-- What skills are missing?
-- What should they learn next?
-- How to plan a roadmap?
+But they don’t know:
+
+- What skills they are missing  
+- What they should learn next  
+- How to follow a structured roadmap  
+
+So they end up following random courses, social media advice, and scattered roadmaps without clarity.
 
 ---
 
@@ -43,7 +58,8 @@ This app helps students by:
 - Resume text input support  
 - Missing skills highlighting  
 - Personalized 90-day roadmap generation  
-- Clean Streamlit UI  
+- Simple, clean Streamlit UI  
+- Deployed live on Streamlit Cloud 
 
 ---
 
@@ -53,6 +69,7 @@ This app helps students by:
 - **Streamlit**
 - Basic NLP keyword matching
 - Git + GitHub
+- Streamlit Cloud Deployment
 
 ---
 
@@ -74,9 +91,46 @@ This app helps students by:
 
 ## ⚙️ Installation & Run Locally
 
-Clone the repository:
-
 ```bash
+# Clone the repository
 git clone https://github.com/Shubh-cs/ai-career-skill-gap-analyzer.git
+
+# Move into the project folder
 cd ai-career-skill-gap-analyzer
+
+# Install required dependencies
+pip install -r requirements.txt
+
+# Run the Streamlit app
+streamlit run app.py
+
+#Then open:
+http://localhost:8501
+```
+---
+
+## 📍 Project Status
+
+- ✅ Version 1 (MVP) Complete
+- 🚧 Version 2 Coming Soon (AI-based recommendations, PDF upload, smarter roadmap)
+
+---
+
+## 🌱 Future Improvements (V2 Roadmap)
+
+- Git + GitHub
+- Resume PDF upload
+- AI-generated roadmap using Azure/OpenAI
+- Skill importance ranking
+- Project recommendations for missing skills
+- User accounts + saved progress
+- Better UI/UX and personalization
+
+  ---
+
+## ⭐ Author
+
+Built by Shubhneet Kaur.
+
+First portfolio project toward AI + Software Engineering excellence.
 
